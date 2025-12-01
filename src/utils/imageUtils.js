@@ -18,7 +18,8 @@ export function getImageUrl(imagePath) {
   if (imagePath.includes('styles')) folder = 'styles';
   if (imagePath.includes('dictionary')) folder = 'dictionary';
 
-  const supabaseUrl = `https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/${folder}/${fileName}`;
+  // ✅ FIXED: Ganti fashion-images → fashion
+  const supabaseUrl = `https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/${folder}/${fileName}`;
   
   return supabaseUrl;
 }
