@@ -1,0 +1,65 @@
+{
+  "body-types": [
+    {
+      "fileName": "apple.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/body-types/apple.jpg"
+    },
+    {
+      "fileName": "hourglass.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/body-types/hourglass.jpg"
+    },
+    {
+      "fileName": "invertedtriangle.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/body-types/invertedtriangle.jpg"
+    },
+    {
+      "fileName": "pear.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/body-types/pear.jpg"
+    },
+    {
+      "fileName": "rectangle.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/body-types/rectangle.jpg"
+    }
+  ],
+  "styles": [
+    {
+      "fileName": "argyle.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/argyle.jpg"
+    },
+    {
+      "fileName": "cashmere.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/cashmere.jpg"
+    },
+    {
+      "fileName": "cityelegance.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/cityelegance.jpg"
+    },
+    {
+      "fileName": "houndstooth.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/houndstooth.jpg"
+    },
+    {
+      "fileName": "pinstripe.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/pinstripe.jpg"
+    },
+    {
+      "fileName": "silk.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/silk.jpg"
+    },
+    {
+      "fileName": "tweed.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/tweed.jpg"
+    },
+    {
+      "fileName": "wool.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/styles/wool.jpg"
+    }
+  ],
+  "dictionary": [],
+  "categories": [
+    {
+      "fileName": "dresses.jpg",
+      "publicUrl": "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/categories/dresses.jpg"
+    }
+  ]
+}

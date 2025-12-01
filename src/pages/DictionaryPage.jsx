@@ -1,12 +1,32 @@
 // pages/DictionaryPage.jsx
-import { useState, useMemo } from 'react';
-import { dictionary } from '../data/dictionary';
+import { useState, useEffect, useMemo } from 'react';
 import { Search, BookOpen, Sparkles, ChevronRight } from 'lucide-react';
+import { getImageUrl, handleImageError } from '../utils/imageUtils';
 
 export default function DictionaryPage() {
+  const [dictionary, setDictionary] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLetter, setSelectedLetter] = useState('');
   const [expandedLetter, setExpandedLetter] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // FETCH DATA FROM API
+  useEffect(() => {
+    const fetchDictionary = async () => {
+      try {
+        const response = await fetch('/api/dictionary');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setDictionary(data);
+      } catch (error) {
+        console.error('Error fetching dictionary:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDictionary();
+  }, []);
 
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
@@ -15,7 +35,7 @@ export default function DictionaryPage() {
       (!selectedLetter || item.category === selectedLetter) &&
       (!searchQuery || item.term.toLowerCase().includes(searchQuery.toLowerCase()))
     ),
-    [searchQuery, selectedLetter]
+    [searchQuery, selectedLetter, dictionary]
   );
 
   // Group terms by first letter
@@ -37,6 +57,17 @@ export default function DictionaryPage() {
     setExpandedLetter(expandedLetter === letter ? null : letter);
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-slate-600">Loading dictionary...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 pb-24">
       {/* Luxury Header */}
@@ -51,7 +82,7 @@ export default function DictionaryPage() {
                 Fashion Dictionary
               </h1>
             </div>
-            <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto mb-8">
+            <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto">
               Master the language of style with our comprehensive fashion glossary
             </p>
 
@@ -93,7 +124,7 @@ export default function DictionaryPage() {
         </div>
       </div>
 
-      {/* Dictionary Content - Mirip CategoriesPage */}
+      {/* Dictionary Content */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         {filteredDict.length === 0 ? (
           <div className="text-center py-16">
@@ -157,12 +188,12 @@ export default function DictionaryPage() {
                             {/* Image */}
                             <div className="relative h-48 bg-gradient-to-br from-slate-100 to-white overflow-hidden">
                               <img
-                                src={item.image}
+                                src={getImageUrl(item.image)}
                                 alt={item.term}
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
-                                onError={(e) => (e.target.src = '/images/fashion/placeholder.png')}
+                                onError={handleImageError}
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300" />
                             </div>
@@ -180,7 +211,6 @@ export default function DictionaryPage() {
                         ))}
                       </div>
                     </div>
-
                   </div>
                 )}
               </div>

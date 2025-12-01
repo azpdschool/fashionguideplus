@@ -45,25 +45,34 @@ export default function HomePage({ setCurrentPage }) {
 
   const trendingItems = [
     {
-      image: '/images/fashion/teddybearcoat.jpg',
-      title: 'Teddy Bear Coat',
-      description: 'Max Mara',
+      image: 'https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/home/P00335234.avif',
+      title: 'MAX MARA - Teddy Bear Coat',
+      description: "Max Mara updates a timeless silhouette with high-impact texture, rendering this brown double-breasted coat in a plush camel hair and silk teddy. The tactile twist feels fashion-forward yet perfectly refined, its playful quality tempered by this design's tailoring and menswear-inspired mood. Let yours bring touchable cool factor to crisp shirts with slim ankle pants and brogues.",
       link: 'https://us.maxmara.com/p-1016085206001-teddy-camel'
     },
     {
-      image: '/images/fashion/straightjeans.png',
-      title: 'Straight Jeans',
-      description: 'Modern cut'
+      image: 'https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/home/w2000_q80.avif',
+      title: 'BALENCIAGA - Le City small embellished textured-leather tote',
+      description: "Crafted from textured-leather, Balenciaga's 'Le City' tote is punctuated with a zipper and plenty of studs, inspired by vintage biker jackets. The small version has braided handles with a longer, removable strap, so you can switch between carrying it in-hand or over your shoulder. Store a little notebook, wallet and lipstick inside.",
+      link: 'https://www.net-a-porter.com/en-us/shop/product/balenciaga/bags/shoulder-bags/le-city-small-embellished-textured-leather-tote/1647597346418131'
     },
     {
-      image: '/images/fashion/maxidress.png',
-      title: 'Maxi Dress',
-      description: 'Flowy fabric'
+      image: 'https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/home/w2000_q80%20(1).avif',
+      title: 'PROENZA SCHOULER - Tee pumps',
+      description: "Proenza Schouler's 'Tee' pumps will inject a generous dose of glamour into your party outfits this season. They're made from sequinned mesh and layered with paillettes to create a light-reflecting, feathered effect and have metallic fluted heels.",
+      link: 'https://www.net-a-porter.com/en-us/shop/product/proenza-schouler/shoes/mid-heel/tee-sequined-mesh-pumps/46376663162978432'
     },
     {
-      image: '/images/fashion/denimjacket.png',
-      title: 'Denim Jacket',
-      description: 'Vintage style'
+      image: 'https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/home/w2000_q80.webp',
+      title: 'BALENCIAGA - Oversized Hooded Pussy-Bow Satin-Jacquard Blouse',
+      description: "Balenciaga's blouse is cut from soft satin that's jacquard-woven with the label's wordmark. Worn on the Resort '23 runway, it has oversized fit with an '80s-style pussy-bow that doubles as a hood at the back. Style yours tucked into a midi skirt.",
+      link: 'https://www.net-a-porter.com/en-us/shop/product/balenciaga/clothing/blouses/oversized-hooded-pussy-bow-satin-jacquard-blouse/1647597301852083'
+    },
+    {
+      image: 'https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion-images/home/ANYA-SKIRT_CREAM-MULTI_41754216-128_GHOST_jpg.webp',
+      title: 'KHAITE - Anya Skirt',
+      description: "Designed to hit below the knee, this knife-pleated twill midi skirt is encircled and enlivened by a precisely placed floral print. Hand-finishing of gradated pleats evokes uniforms of the 1940s.",
+      link: 'https://khaite.com/collections/new/products/anya-skirt-in-cream-multi'
     }
   ];
 

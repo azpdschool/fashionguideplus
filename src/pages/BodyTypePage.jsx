@@ -1,11 +1,39 @@
 // pages/BodyTypePage.jsx
-import { useState } from 'react';
-import { bodyTypes } from '../data/bodyTypes';
+import { useState, useEffect } from 'react';
 import { Users, ChevronRight, Shirt, ShoppingBag, Sparkles, Zap, Info } from 'lucide-react';
+import { getImageUrl, handleImageError } from '../utils/imageUtils';
 
 export default function BodyTypePage() {
+  const [bodyTypes, setBodyTypes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [expandedBodyType, setExpandedBodyType] = useState(null);
   const [expandedCategory, setExpandedCategory] = useState({});
+
+  // Di bagian atas component BodyTypePage, setelah useState
+  useEffect(() => {
+    // Test URLs
+    console.log('🧪 Testing Body Type URLs:');
+    console.log('apple.jpg ->', getImageUrl('/images/fashion/body-types/apple.jpg'));
+    console.log('hourglass.jpg ->', getImageUrl('/images/fashion/body-types/hourglass.jpg'));
+  }, []);
+
+  // FETCH DATA FROM API
+  useEffect(() => {
+    const fetchBodyTypes = async () => {
+      try {
+        const response = await fetch('/api/body-types');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setBodyTypes(data);
+      } catch (error) {
+        console.error('Error fetching body types:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBodyTypes();
+  }, []);
 
   const toggleBodyType = (bodyTypeName) => {
     setExpandedBodyType(expandedBodyType === bodyTypeName ? null : bodyTypeName);
@@ -44,6 +72,17 @@ export default function BodyTypePage() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-slate-600">Loading body types...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 pb-24">
       {/* Luxury Header */}
@@ -80,17 +119,15 @@ export default function BodyTypePage() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-6">
-                    {/* Body Type Image (menggantikan icon) */}
+                    {/* Body Type Image */}
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
                       <img 
-                        src={type.image}
+                        src={getImageUrl(type.image)}
                         alt={type.name}
                         loading="lazy"
                         decoding="async"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        onError={(e) => {
-                          e.target.src = '/images/fashion/placeholder.png';
-                        }}
+                        onError={handleImageError}
                       />
                     </div>
                     
@@ -152,7 +189,7 @@ export default function BodyTypePage() {
                                   {getCategoryTitle(category)}
                                 </h3>
                                 <p className="text-slate-500 text-sm">
-                                  {type[category].length} recommended items
+                                  {type[category]?.length || 0} recommended items
                                 </p>
                               </div>
                             </div>
@@ -164,7 +201,7 @@ export default function BodyTypePage() {
                         </div>
 
                         {/* Expandable Category Content */}
-                        {expandedCategory[type.name]?.[category] && (
+                        {expandedCategory[type.name]?.[category] && type[category] && (
                           <div className="border-t border-slate-200/60 p-6 bg-gradient-to-br from-slate-50 to-white">
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                               {type[category].map((item, idx) => (
@@ -176,14 +213,12 @@ export default function BodyTypePage() {
                                   <div className="relative mb-4 rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm group-hover/item:shadow-xl transition-all duration-500">
                                     <div className="aspect-square relative overflow-hidden">
                                       <img 
-                                        src={type.image}
-                                        alt={type.name}
+                                        src={getImageUrl(item.image)}
+                                        alt={item.name}
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        onError={(e) => {
-                                          e.target.src = '/images/fashion/placeholder.png';
-                                        }}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
+                                        onError={handleImageError}
                                       />
                                       {/* Overlay */}
                                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>

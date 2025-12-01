@@ -1,14 +1,45 @@
 // pages/CategoriesPage.jsx
-import { categories } from '../data/categories';
+import { useState, useEffect } from 'react';
 import { Sparkles, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { getImageUrl, handleImageError } from '../utils/imageUtils';
 
 export default function CategoriesPage() {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [expandedCategory, setExpandedCategory] = useState(null);
+
+  // FETCH DATA FROM API
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch('/api/categories');
+        if (!response.ok) throw new Error('Failed to fetch');
+        const data = await response.json();
+        setCategories(data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const toggleCategory = (categoryId) => {
     setExpandedCategory(expandedCategory === categoryId ? null : categoryId);
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          <p className="mt-4 text-slate-600">Loading categories...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 pb-24">
@@ -59,7 +90,7 @@ export default function CategoriesPage() {
                       </h2>
                       <div className="flex items-center gap-4 text-slate-500">
                         <span className="text-sm font-medium">
-                          {category.items.length} items
+                          {category.items?.length || 0} items
                         </span>
                         <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
                         <span className="text-sm">Click to explore</span>
@@ -76,7 +107,7 @@ export default function CategoriesPage() {
               </div>
 
               {/* Expandable Content */}
-              {expandedCategory === category.id && (
+              {expandedCategory === category.id && category.items && (
                 <div className="border-t border-slate-200/60 p-8 bg-gradient-to-br from-slate-50 to-white">
                   <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     {category.items.map((item) => (
@@ -88,14 +119,12 @@ export default function CategoriesPage() {
                         <div className="relative mb-4 rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm group-hover/item:shadow-xl transition-all duration-500">
                           <div className="aspect-square relative overflow-hidden">
                             <img 
-                              src={`/images/fashion/${item.name.toLowerCase().replace(/\s+/g, '')}.png`}
+                              src={getImageUrl(item.image)}
                               alt={item.name}
                               loading="lazy"
                               decoding="async"
                               className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
-                              onError={(e) => {
-                                e.target.src = '/images/fashion/placeholder.png';
-                              }}
+                              onError={handleImageError}
                             />
                             {/* Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"></div>
