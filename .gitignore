@@ -1,42 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables (PENTING!)
+.env
+.env.local
+.env.production
+
+# Build outputs
+dist/
+build/
+
 # Logs
-logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-# Node modules
-node_modules/
-
-# Build / output
-dist/
-dist-ssr/
-.vite/
-*.local
-
-# Environment / secrets
-.env
-supabase.js
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# OS files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
 
-# Generated images / data
-public/images/fashion/body-types/
-public/images/fashion/categories/
-public/images/fashion/dictionary/
-public/images/fashion/styles/
-src/data/images/
-
-# Temporary / optional
-*.tmp
+# Editor
+.vscode/
+.idea/

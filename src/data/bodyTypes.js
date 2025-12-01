@@ -11,24 +11,24 @@ export const bodyTypes = [
       hips_smallest: true,
     },
     tops: [
-      { name: "V-neck", image: "/images/fashion/dictionary/vneck.png" },
-      { name: "Wrap tops", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Empire waist", image: "/images/fashion/dictionary/empirewaist.png" }
+      { name: "V-neck", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/vneck.png" },
+      { name: "Wrap tops", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Empire waist", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/empirewaist.png" }
     ],
     bottoms: [
-      { name: "Bootcut jeans", image: "/images/fashion/dictionary/flaredjeans.png" },
-      { name: "A-line skirts", image: "/images/fashion/dictionary/a-line.png" }
+      { name: "Bootcut jeans", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/flaredjeans.png" },
+      { name: "A-line skirts", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/a-line.png" }
     ],
     dress: [
-      { name: "Empire waist", image: "/images/fashion/dictionary/empirewaist.png" },
-      { name: "A-line dress", image: "/images/fashion/dictionary/a-line.png" }
+      { name: "Empire waist", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/empirewaist.png" },
+      { name: "A-line dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/a-line.png" }
     ],
     outer: [
-      { name: "Long cardigan", image: "/images/fashion/body-types/longcardigan.png" },
-      { name: "Open blazer", image: "/images/fashion/body-types/openblazer.png" }
+      { name: "Long cardigan", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/longcardigan.png" },
+      { name: "Open blazer", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/openblazer.png" }
     ],
     color: "from-emerald-500 to-teal-500",
-    image: "/images/fashion/body-types/apple.png"
+    image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/apple.png"
   },
   {
     name: "Hourglass",
@@ -40,25 +40,25 @@ export const bodyTypes = [
       waist_to_upperLower_ratio: "waist ≥ 25% smaller",
     },
     tops: [
-      { name: "Wrap tops", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Fitted shirts", image: "/images/fashion/categories/blouse.png" },
-      { name: "V-neck", image: "/images/fashion/dictionary/vneck.png" }
+      { name: "Wrap tops", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Fitted shirts", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/categories/blouse.png" },
+      { name: "V-neck", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/vneck.png" }
     ],
     bottoms: [
-      { name: "High-waisted jeans", image: "/images/fashion/dictionary/highwaisted.png" },
-      { name: "Pencil skirts", image: "/images/fashion/dictionary/shiftdress.png" }
+      { name: "High-waisted jeans", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/highwaisted.png" },
+      { name: "Pencil skirts", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/shiftdress.png" }
     ],
     dress: [
-      { name: "Bodycon", image: "/images/fashion/dictionary/bodycon.png" },
-      { name: "Wrap dress", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Fit and flare", image: "/images/fashion/dictionary/fitandflare.png" }
+      { name: "Bodycon", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/bodycon.png" },
+      { name: "Wrap dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Fit and flare", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/fitandflare.png" }
     ],
     outer: [
-      { name: "Belted coats", image: "/images/fashion/body-types/beltedcoats.png" },
-      { name: "Fitted blazers", image: "/images/fashion/body-types/fittedblazers.png" }
+      { name: "Belted coats", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/beltedcoats.png" },
+      { name: "Fitted blazers", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/fittedblazers.png" }
     ],
     color: "from-pink-500 to-rose-500",
-    image: "/images/fashion/body-types/hourglass.png"
+    image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/hourglass.png"
   },
   {
     name: "Inverted Triangle",
@@ -70,26 +70,26 @@ export const bodyTypes = [
       bustShoulder_to_hip_ratio: "≥ 5% bigger",
     },
     tops: [
-      { name: "V-neck", image: "/images/fashion/dictionary/vneck.png" },
-      { name: "Wrap tops", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Raglan sleeves", image: "/images/fashion/dictionary/raglan.png" }
+      { name: "V-neck", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/vneck.png" },
+      { name: "Wrap tops", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Raglan sleeves", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/raglan.png" }
     ],
     bottoms: [
-      { name: "Wide-leg pants", image: "/images/fashion/dictionary/widelegpants.png" },
-      { name: "Flared jeans", image: "/images/fashion/dictionary/flaredjeans.png" },
-      { name: "A-line skirt", image: "/images/fashion/dictionary/a-line.png" }
+      { name: "Wide-leg pants", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/widelegpants.png" },
+      { name: "Flared jeans", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/flaredjeans.png" },
+      { name: "A-line skirt", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/a-line.png" }
     ],
     dress: [
-      { name: "A-line dress", image: "/images/fashion/dictionary/a-line.png" },
-      { name: "Bias-cut dress", image: "/images/fashion/dictionary/biascut.png" },
-      { name: "Fit and flare", image: "/images/fashion/dictionary/fitandflare.png" }
+      { name: "A-line dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/a-line.png" },
+      { name: "Bias-cut dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/biascut.png" },
+      { name: "Fit and flare", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/fitandflare.png" }
     ],
     outer: [
-      { name: "Structured coats", image: "/images/fashion/body-types/structuredcoat.png" },
-      { name: "Peplum blazer", image: "/images/fashion/body-types/peplumblazer.png" }
+      { name: "Structured coats", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/structuredcoat.png" },
+      { name: "Peplum blazer", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/peplumblazer.png" }
     ],
     color: "from-red-500 to-orange-500",
-    image: "/images/fashion/body-types/invertedtriangle.png"
+    image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/invertedtriangle.png"
   },
   {
     name: "Pear",
@@ -102,24 +102,24 @@ export const bodyTypes = [
       waist_smallest: true,
     },
     tops: [
-      { name: "Boat neck", image: "/images/fashion/dictionary/boatneck.png" },
-      { name: "Square neck", image: "/images/fashion/dictionary/offshoulder.png" },
-      { name: "Puff sleeves", image: "/images/fashion/dictionary/capsleeve.png" }
+      { name: "Boat neck", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/boatneck.png" },
+      { name: "Square neck", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/offshoulder.png" },
+      { name: "Puff sleeves", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/capsleeve.png" }
     ],
     bottoms: [
-      { name: "Straight pants", image: "/images/fashion/dictionary/straightpants.png" },
-      { name: "A-line skirt", image: "/images/fashion/dictionary/a-line.png" }
+      { name: "Straight pants", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/straightpants.png" },
+      { name: "A-line skirt", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/a-line.png" }
     ],
     dress: [
-      { name: "Empire waist", image: "/images/fashion/dictionary/empirewaist.png" },
-      { name: "Fit and flare", image: "/images/fashion/dictionary/fitandflare.png" }
+      { name: "Empire waist", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/empirewaist.png" },
+      { name: "Fit and flare", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/fitandflare.png" }
     ],
     outer: [
-      { name: "Cropped jacket", image: "/images/fashion/body-types/croppedjacket.png" },
-      { name: "Structured blazer", image: "/images/fashion/body-types/structuredcoat.png" }
+      { name: "Cropped jacket", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/croppedjacket.png" },
+      { name: "Structured blazer", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/structuredcoat.png" }
     ],
     color: "from-purple-500 to-indigo-500",
-    image: "/images/fashion/body-types/pear.png"
+    image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/pear.png"
   },
   {
     name: "Rectangle",
@@ -131,25 +131,25 @@ export const bodyTypes = [
       waist_to_bustShoulder_ratio: "waist less than 25% smaller",
     },
     tops: [
-      { name: "Peplum tops", image: "/images/fashion/dictionary/ruched.png" },
-      { name: "Ruffled blouse", image: "/images/fashion/categories/blouse.png" },
-      { name: "Off-the-shoulder", image: "/images/fashion/dictionary/offshoulder.png" }
+      { name: "Peplum tops", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/ruched.png" },
+      { name: "Ruffled blouse", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/categories/blouse.png" },
+      { name: "Off-the-shoulder", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/offshoulder.png" }
     ],
     bottoms: [
-      { name: "Wide-leg pants", image: "/images/fashion/dictionary/widelegpants.png" },
-      { name: "Pleated skirts", image: "/images/fashion/dictionary/pleats.png" },
-      { name: "Bootcut jeans", image: "/images/fashion/dictionary/flaredjeans.png" }
+      { name: "Wide-leg pants", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/widelegpants.png" },
+      { name: "Pleated skirts", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/pleats.png" },
+      { name: "Bootcut jeans", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/flaredjeans.png" }
     ],
     dress: [
-      { name: "Belted dress", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Wrap dress", image: "/images/fashion/dictionary/wrapdress.png" },
-      { name: "Fit and flare", image: "/images/fashion/dictionary/fitandflare.png" }
+      { name: "Belted dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Wrap dress", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/wrapdress.png" },
+      { name: "Fit and flare", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/dictionary/fitandflare.png" }
     ],
     outer: [
-      { name: "Tailored blazer", image: "/images/fashion/body-types/fittedblazers.png" },
-      { name: "Trench coat", image: "/images/fashion/body-types/trenchcoat.png" }
+      { name: "Tailored blazer", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/fittedblazers.png" },
+      { name: "Trench coat", image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/trenchcoat.png" }
     ],
     color: "from-blue-500 to-cyan-500",
-    image: "/images/fashion/body-types/rectangle.png"
+    image: "https://iabqihvrkrhkawctlthj.supabase.co/storage/v1/object/public/fashion/body-types/rectangle.png"
   }
 ];
