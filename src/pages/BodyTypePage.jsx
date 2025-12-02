@@ -9,9 +9,8 @@ export default function BodyTypePage() {
   const [expandedBodyType, setExpandedBodyType] = useState(null);
   const [expandedCategory, setExpandedCategory] = useState({});
 
-  // Di bagian atas component BodyTypePage, setelah useState
+  // Test URLs
   useEffect(() => {
-    // Test URLs
     console.log('🧪 Testing Body Type URLs:');
     console.log('apple.jpg ->', getImageUrl('/images/fashion/body-types/apple.jpg'));
     console.log('hourglass.jpg ->', getImageUrl('/images/fashion/body-types/hourglass.jpg'));
@@ -21,9 +20,10 @@ export default function BodyTypePage() {
   useEffect(() => {
     const fetchBodyTypes = async () => {
       try {
-        const response = await fetch('/api/body-types');
+        const response = await fetch('/api/body-types'); // ✅ Dengan dash
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
+        console.log('✅ Body types data:', data);
         setBodyTypes(data);
       } catch (error) {
         console.error('Error fetching body types:', error);
@@ -57,7 +57,7 @@ export default function BodyTypePage() {
       case 'tops': return <Shirt className="w-5 h-5" />;
       case 'bottoms': return <ShoppingBag className="w-5 h-5" />;
       case 'dress': return <Sparkles className="w-5 h-5" />;
-      case 'outerwear': return <Zap className="w-5 h-5" />;
+      case 'outerwear': return <Zap className="w-5 h-5" />; // ✅ FIXED: outer → outerwear
       default: return <Shirt className="w-5 h-5" />;
     }
   };
@@ -67,7 +67,7 @@ export default function BodyTypePage() {
       case 'tops': return 'Recommended Tops';
       case 'bottoms': return 'Recommended Bottoms';
       case 'dress': return 'Dress Shapes';
-      case 'outerwear': return 'Outerwear';
+      case 'outerwear': return 'Outerwear'; // ✅ FIXED: outer → outerwear
       default: return category;
     }
   };
@@ -122,7 +122,7 @@ export default function BodyTypePage() {
                     {/* Body Type Image */}
                     <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg">
                       <img 
-                        src={getImageUrl(type.image)}
+                        src={type.image}
                         alt={type.name}
                         loading="lazy"
                         decoding="async"
@@ -163,7 +163,7 @@ export default function BodyTypePage() {
                       <h3 className="text-xl font-bold text-slate-900">How to Recognize This Body Type</h3>
                     </div>
                     <p className="text-slate-600 leading-relaxed font-light">
-                      {type.how_to_recognize || type.howToRecognize || 'No description available'}
+                      {type.how_to_recognize}
                     </p>
                   </div>
 
@@ -213,7 +213,7 @@ export default function BodyTypePage() {
                                   <div className="relative mb-4 rounded-2xl overflow-hidden bg-white border border-slate-200/80 shadow-sm group-hover/item:shadow-xl transition-all duration-500">
                                     <div className="aspect-square relative overflow-hidden">
                                       <img 
-                                        src={getImageUrl(item.image)}
+                                        src={item.image}
                                         alt={item.name}
                                         loading="lazy"
                                         decoding="async"
