@@ -1,5 +1,5 @@
 // ============================================
-// FILE 3: api/dictionary.js
+// FILE 1: api/body-types.js
 // ============================================
 import { createClient } from '@supabase/supabase-js';
 
@@ -26,22 +26,21 @@ export default async function handler(req, res) {
     const supabase = createClient(supabaseUrl, supabaseKey);
     
     const { data, error } = await supabase
-      .from('dictionary')
-      .select('*')
-      .order('term', { ascending: true });
+      .from('body_types')
+      .select('*');
     
     if (error) {
       console.error('❌ Supabase error:', error);
       throw error;
     }
     
-    console.log('✅ Dictionary fetched:', data?.length, 'items');
+    console.log('✅ Body types fetched:', data?.length, 'items');
     res.status(200).json(data);
     
   } catch (error) {
     console.error('❌ API Error:', error);
     res.status(500).json({ 
-      error: 'Failed to fetch dictionary',
+      error: 'Failed to fetch body types',
       details: error.message 
     });
   }

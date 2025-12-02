@@ -57,7 +57,7 @@ export default function BodyTypePage() {
       case 'tops': return <Shirt className="w-5 h-5" />;
       case 'bottoms': return <ShoppingBag className="w-5 h-5" />;
       case 'dress': return <Sparkles className="w-5 h-5" />;
-      case 'outer': return <Zap className="w-5 h-5" />;
+      case 'outerwear': return <Zap className="w-5 h-5" />;
       default: return <Shirt className="w-5 h-5" />;
     }
   };
@@ -67,7 +67,7 @@ export default function BodyTypePage() {
       case 'tops': return 'Recommended Tops';
       case 'bottoms': return 'Recommended Bottoms';
       case 'dress': return 'Dress Shapes';
-      case 'outer': return 'Outerwear';
+      case 'outerwear': return 'Outerwear';
       default: return category;
     }
   };
@@ -163,13 +163,13 @@ export default function BodyTypePage() {
                       <h3 className="text-xl font-bold text-slate-900">How to Recognize This Body Type</h3>
                     </div>
                     <p className="text-slate-600 leading-relaxed font-light">
-                      {type.howToRecognize}
+                      {type.how_to_recognize || type.howToRecognize || 'No description available'}
                     </p>
                   </div>
 
                   {/* Categories Grid */}
                   <div className="space-y-4">
-                    {['tops', 'bottoms', 'dress', 'outer'].map((category) => (
+                    {['tops', 'bottoms', 'dress', 'outerwear'].map((category) => (
                       <div 
                         key={category}
                         className="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
