@@ -1,20 +1,36 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     }
   ],
-  "headers": [
+  "rewrites": [
     {
       "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Credentials", "value": "true" },
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
-      ]
+      "destination": "/api/$1"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/body-types",
+      "dest": "/api/body-types.js"
+    },
+    {
+      "src": "/api/categories",
+      "dest": "/api/categories.js"
+    },
+    {
+      "src": "/api/dictionary",
+      "dest": "/api/dictionary.js"
+    },
+    {
+      "src": "/api/styles",
+      "dest": "/api/styles.js"
     }
   ]
 }
