@@ -5,6 +5,7 @@ import DictionaryPage from './pages/DictionaryPage';
 import BodyTypePage from './pages/BodyTypePage';
 import StylesPage from './pages/StylesPage';
 import BottomNavbar from './components/common/BottomNavbar';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -16,6 +17,7 @@ export default function App() {
       {currentPage === 'dictionary' && <DictionaryPage />}
       {currentPage === 'bodytype' && <BodyTypePage />}
       {currentPage === 'styles' && <StylesPage />}
+      {currentPage === 'about' && <AboutPage setCurrentPage={setCurrentPage} />}
 
       <BottomNavbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </div>

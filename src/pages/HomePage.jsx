@@ -20,7 +20,7 @@ export default function HomePage({ setCurrentPage }) {
     {
       id: 'categories',
       icon: <Grid3X3 className="w-8 h-8" />,
-      title: 'Fashion Categories',
+      title: 'Fashion Collection',
       description: 'Explore clothing by type and occasion',
     },
     {
@@ -79,23 +79,30 @@ export default function HomePage({ setCurrentPage }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 pb-24">
       {/* Luxury Header - Same as DictionaryPage */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200/60">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="w-14 h-14 bg-gradient-to-br from-slate-800 to-slate-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <Sparkles className="w-7 h-7 text-amber-200" />
-              </div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-                Fashion Guide+
-              </h1>
-            </div>
-            <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto">
-              Master the art of style with our comprehensive fashion guides
-            </p>
-          </div>
+<div className="bg-white/80 backdrop-blur-sm border-b border-slate-200/60">
+  <div className="max-w-6xl mx-auto px-6 py-12">
+    <div className="text-center">
+
+      {/* ICON HEADER YANG KAMU MAKSUD */}
+      <div className="flex justify-center mb-4">
+        <div className="w-16 h-16 bg-gradient-to-br from-slate-800 to-slate-600 rounded-2xl flex items-center justify-center shadow-lg">
+          <Sparkles className="w-8 h-8 text-amber-200" />
         </div>
       </div>
+
+      {/* TITLE */}
+      <h1 className="text-4xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent mb-3">
+        Fashion Guide+
+      </h1>
+
+      {/* SUBTITLE */}
+      <p className="text-slate-600 text-lg font-light max-w-2xl mx-auto">
+        Master the art of style with our comprehensive fashion guides
+      </p>
+    </div>
+  </div>
+</div>
+
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-6 py-8">

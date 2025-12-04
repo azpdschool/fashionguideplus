@@ -1,13 +1,14 @@
 // components/common/BottomNavbar.jsx
-import { Home, Grid3X3, BookOpen, Users, Zap } from 'lucide-react';
+import { Home, Grid3X3, BookOpen, Users, Zap, InfoIcon } from 'lucide-react';
 
 export default function BottomNavbar({ currentPage, setCurrentPage }) {
   const navItems = [
     { id: 'home', icon: Home, label: 'Home' },
-    { id: 'categories', icon: Grid3X3, label: 'Categories' },
+    { id: 'categories', icon: Grid3X3, label: 'Col;ection' },
     { id: 'dictionary', icon: BookOpen, label: 'Dictionary' },
     { id: 'bodytype', icon: Users, label: 'Body Type' },
     { id: 'styles', icon: Zap, label: 'Styles' },
+    { id: 'about', icon: InfoIcon, label: 'About' },
   ];
 
   return (
